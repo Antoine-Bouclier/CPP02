@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <math.h>
 
 class Fixed
 {
@@ -21,17 +22,19 @@ class Fixed
 
 		/* -- Overload operator -- */
 		Fixed &operator=(const Fixed &src);
-		Fixed &operator<<(std::stringstream fixed);
-
+		
+		
 		/* -- Getter -- */
 		int		getRawBits(void) const;
-
+		
 		/* -- Setter -- */
 		void	setRawBits(int const raw);
-
+		
 		/* -- Conversions -- */
 		float	toFloat(void) const;
 		int		toInt(void) const;
-};
+	};
+	
+std::ostream& operator<<(std::ostream& os, const Fixed& f);
 
 #endif
