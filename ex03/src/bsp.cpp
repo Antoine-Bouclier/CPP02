@@ -3,12 +3,17 @@
 
 static float area(Point const a, Point const b, Point const c)
 {
-	return fabs(
+	float	area =
+	(
 		(a.getX() * (b.getY() - c.getY()) +
 		b.getX() * (c.getY() - a.getY()) +
 		c.getX() * (a.getY() - b.getY())) 
 		/ 2.0f
 	);
+
+	if (area < 0)
+		return (area * -1);
+	return (area);
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
